@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HANZZO | NETWORK PORT PRO - Мониторинг сети для Русской Рыбалки 4</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -29,7 +27,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
             color: var(--light);
             line-height: 1.6;
@@ -114,7 +112,6 @@
         }
 
         .logo-main {
-            font-family: 'Montserrat', sans-serif;
             font-size: 1.6rem;
             font-weight: 900;
             background: linear-gradient(45deg, var(--primary), var(--accent));
@@ -171,10 +168,6 @@
             box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
         }
 
-        .nav-link i {
-            font-size: 0.9rem;
-        }
-
         .hamburger {
             display: none;
             cursor: pointer;
@@ -191,7 +184,7 @@
             transition: 0.3s;
         }
 
-        /* Главный баннер с отступом */
+        /* Главный баннер */
         .hero {
             min-height: 100vh;
             padding: 120px 0 60px;
@@ -228,7 +221,6 @@
         }
 
         .hero-title {
-            font-family: 'Montserrat', sans-serif;
             font-size: 3.2rem;
             font-weight: 900;
             line-height: 1.1;
@@ -281,11 +273,6 @@
         .feature-item:hover {
             transform: translateX(5px);
             background: rgba(59, 130, 246, 0.1);
-        }
-
-        .feature-item i {
-            color: var(--accent);
-            font-size: 1.1rem;
         }
 
         .hero-buttons {
@@ -396,8 +383,6 @@
                 0 0 60px rgba(59, 130, 246, 0.15),
                 inset 0 0 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(59, 130, 246, 0.2);
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
 
         .monitor-screen {
@@ -443,7 +428,6 @@
         .control-btn:nth-child(2) { background: #f59e0b; }
         .control-btn:nth-child(3) { background: #10b981; }
 
-        /* Анимированная панель мониторинга */
         .monitoring-dashboard {
             padding: 1.5rem;
             position: relative;
@@ -542,7 +526,6 @@
             color: var(--gray);
         }
 
-        /* Панель метрик */
         .metrics-panel {
             background: rgba(15, 23, 42, 0.6);
             border-radius: 12px;
@@ -590,7 +573,6 @@
             gap: 0.2rem;
         }
 
-        /* График пинга */
         .ping-graph-container {
             margin: 1.5rem 0;
         }
@@ -633,7 +615,6 @@
             background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.2));
         }
 
-        /* Информация о сервере */
         .server-info {
             display: flex;
             justify-content: space-between;
@@ -649,11 +630,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .server-detail i {
-            color: var(--accent);
-            font-size: 0.9rem;
         }
 
         .server-name {
@@ -746,7 +722,6 @@
         }
 
         .section-title {
-            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
@@ -1263,11 +1238,11 @@
                 </a>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Главная</a></li>
-                    <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Возможности</a></li>
-                    <li><a href="#download" class="nav-link"><i class="fas fa-download"></i> Скачать</a></li>
-                    <li><a href="#screenshots" class="nav-link"><i class="fas fa-image"></i> Скриншоты</a></li>
-                    <li><a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#features" class="nav-link">Возможности</a></li>
+                    <li><a href="#download" class="nav-link">Скачать</a></li>
+                    <li><a href="#screenshots" class="nav-link">Скриншоты</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
                 </ul>
                 
                 <div class="hamburger" id="hamburger">
@@ -1290,29 +1265,25 @@
                     
                     <div class="hero-features">
                         <div class="feature-item">
-                            <i class="fas fa-bolt"></i>
                             <span>Измерение пинга в реальном времени</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-chart-line"></i>
                             <span>Детальная статистика и графики</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-shield-alt"></i>
                             <span>100% безопасный мониторинг</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-gamepad"></i>
                             <span>Автоматическое обнаружение игры</span>
                         </div>
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="#download" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Скачать v1.5.0
+                        <a href="https://hanzzo.do.am/HANZZO_NETWORK_PORT_PRO_v1.5.rar" class="btn btn-primary">
+                            Скачать v1.5.0
                         </a>
                         <a href="#features" class="btn btn-secondary">
-                            <i class="fas fa-info-circle"></i> Узнать больше
+                            Узнать больше
                         </a>
                     </div>
                     
@@ -1337,7 +1308,6 @@
                         <div class="monitor-screen">
                             <div class="screen-header">
                                 <div class="screen-title">
-                                    <i class="fas fa-satellite-dish"></i>
                                     Мониторинг сети в реальном времени
                                 </div>
                                 <div class="screen-controls">
@@ -1369,7 +1339,6 @@
                                             <div class="metric-value" id="pingValue">32</div>
                                             <div class="metric-label">Текущий пинг</div>
                                             <div class="metric-change">
-                                                <i class="fas fa-arrow-down"></i>
                                                 <span id="pingChange">-2ms</span>
                                             </div>
                                         </div>
@@ -1377,7 +1346,6 @@
                                             <div class="metric-value" id="jitterValue">4</div>
                                             <div class="metric-label">Джиттер</div>
                                             <div class="metric-change">
-                                                <i class="fas fa-minus"></i>
                                                 <span>стабильно</span>
                                             </div>
                                         </div>
@@ -1385,7 +1353,6 @@
                                             <div class="metric-value" id="packetLoss">0.2%</div>
                                             <div class="metric-label">Потери пакетов</div>
                                             <div class="metric-change">
-                                                <i class="fas fa-check"></i>
                                                 <span>отлично</span>
                                             </div>
                                         </div>
@@ -1393,7 +1360,6 @@
                                     
                                     <div class="ping-graph-container">
                                         <div class="graph-title">
-                                            <i class="fas fa-chart-line"></i>
                                             История пинга за 60 секунд
                                         </div>
                                         <div class="ping-graph" id="pingGraph">
@@ -1404,17 +1370,14 @@
                                 
                                 <div class="server-info">
                                     <div class="server-detail">
-                                        <i class="fas fa-server"></i>
                                         <span class="server-name" id="serverName">rf4game.ru:9777</span>
                                     </div>
                                     <div class="server-status" id="serverStatus">
-                                        <i class="fas fa-check-circle"></i>
                                         Онлайн
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1437,51 +1400,39 @@
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-satellite-dish"></i>
-                    </div>
+                    <div class="feature-icon">📡</div>
                     <h3>Мониторинг в реальном времени</h3>
-                    <p>Автоматическое обнаружение игры Русская Рыбалка 4 и измерение пинга к игровому серверу с интервалом 1 секунда. Отслеживание всех сетевых соединений.</p>
+                    <p>Автоматическое обнаружение игры Русская Рыбалка 4 и измерение пинга к игровому серверу с интервалом 1 секунда.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
+                    <div class="feature-icon">📊</div>
                     <h3>Расширенная статистика</h3>
-                    <p>Детальные графики истории пинга, анализ стабильности соединения, категоризация качества пинга (Отлично/Хорошо/Норма/Плохо).</p>
+                    <p>Детальные графики истории пинга, анализ стабильности соединения, категоризация качества пинга.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="feature-icon">🛡️</div>
                     <h3>Полная безопасность</h3>
-                    <p>Только пассивный мониторинг без вмешательства в игру. Не изменяет файлы игры, не модифицирует память, не является читом.</p>
+                    <p>Только пассивный мониторинг без вмешательства в игру. Не изменяет файлы игры, не модифицирует память.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
+                    <div class="feature-icon">📅</div>
                     <h3>История сессий</h3>
-                    <p>Сохранение всех игровых сессий с детальной статистикой. Экспорт данных в форматах CSV и HTML. База данных сессий с фильтрацией.</p>
+                    <p>Сохранение всех игровых сессий с детальной статистикой. Экспорт данных в форматах CSV и HTML.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                    <div class="feature-icon">🔧</div>
                     <h3>Дополнительные инструменты</h3>
-                    <p>Экранная лупа с увеличением до 10x, создание скриншотов, автообновление, горячие клавиши, работа в системном трее.</p>
+                    <p>Экранная лупа с увеличением до 10x, создание скриншотов, автообновление, горячие клавиши.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
+                    <div class="feature-icon">⚡</div>
                     <h3>Оптимизация</h3>
-                    <p>Минимальное потребление ресурсов (менее 100 MB RAM), автоматическое обновление, поддержка всех версий Windows 10/11.</p>
+                    <p>Минимальное потребление ресурсов (менее 100 MB RAM), автоматическое обновление, поддержка всех версий Windows.</p>
                 </div>
             </div>
         </div>
@@ -1493,35 +1444,35 @@
             <h2 class="section-title">
                 Скачать <span class="highlight">HANZZO NETWORK PORT PRO</span>
             </h2>
-            <p class="section-subtitle">Версия 1.5.0 - Последнее обновление: 15.01.2024</p>
+            <p class="section-subtitle">Версия 1.5.0 - Последнее обновление: 10.12.2025</p>
             
             <div class="download-content">
                 <div class="download-info">
                     <div class="requirements">
-                        <h3><i class="fas fa-desktop"></i> Системные требования:</h3>
+                        <h3>Системные требования:</h3>
                         <ul>
-                            <li><i class="fas fa-check" style="color: #10b981;"></i> ОС: Windows 10/11 (64-bit)</li>
-                            <li><i class="fas fa-check" style="color: #10b981;"></i> Игра: Русская Рыбалка 4 (Steam версия)</li>
-                            <li><i class="fas fa-check" style="color: #10b981;"></i> Память: 100 MB свободной RAM</li>
-                            <li><i class="fas fa-check" style="color: #10b981;"></i> Сеть: Активное интернет-соединение</li>
+                            <li>ОС: Windows 10/11 (64-bit)</li>
+                            <li>Игра: Русская Рыбалка 4 (Steam версия)</li>
+                            <li>Память: 100 MB свободной RAM</li>
+                            <li>Сеть: Активное интернет-соединение</li>
                         </ul>
                     </div>
                     
                     <div class="version-info">
-                        <h3><i class="fas fa-history"></i> Что нового в v1.5.0:</h3>
+                        <h3>Что нового в v1.5.0:</h3>
                         <ul>
-                            <li><i class="fas fa-plus" style="color: #3b82f6;"></i> Добавлена экранная лупа с увеличением до 10x</li>
-                            <li><i class="fas fa-plus" style="color: #3b82f6;"></i> Улучшена система автообновлений</li>
-                            <li><i class="fas fa-plus" style="color: #3b82f6;"></i> Оптимизировано потребление ресурсов</li>
-                            <li><i class="fas fa-plus" style="color: #3b82f6;"></i> Добавлены новые горячие клавиши</li>
-                            <li><i class="fas fa-bug" style="color: #f59e0b;"></i> Исправлены мелкие ошибки и улучшена стабильность</li>
+                            <li>Добавлена экранная лупа с увеличением до 10x</li>
+                            <li>Улучшена система автообновлений</li>
+                            <li>Оптимизировано потребление ресурсов</li>
+                            <li>Добавлены новые горячие клавиши</li>
+                            <li>Исправлены мелкие ошибки и улучшена стабильность</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="download-card">
                     <div class="download-icon">
-                        <i class="fas fa-download fa-3x"></i>
+                        ⬇️
                     </div>
                     <h3>Скачать сейчас</h3>
                     <p style="text-align: center; color: #94a3b8; margin-bottom: 1.5rem;">
@@ -1529,19 +1480,18 @@
                     </p>
                     
                     <div class="file-info">
-                        <p><i class="fas fa-file-archive"></i> HANZZO_Network_Port_Pro_v1.5.zip</p>
-                        <p><i class="fas fa-weight"></i> 15.2 MB</p>
-                        <p><i class="fas fa-calendar"></i> 15.01.2024</p>
+                        <p>HANZZO_Network_Port_Pro_v1.5.rar</p>
+                        <p>15.2 MB</p>
+                        <p>10.12.2025</p>
                     </div>
                     
-                    <a href="#" class="btn btn-primary btn-large">
-                        <i class="fas fa-download"></i> Скачать v1.5.0
+                    <a href="https://hanzzo.do.am/HANZZO_NETWORK_PORT_PRO_v1.5.rar" class="btn btn-primary btn-large">
+                        Скачать v1.5.0
                     </a>
                     
                     <div class="alternative-links">
                         <p style="color: #94a3b8; margin-bottom: 1rem;">Также доступно:</p>
-                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#"><i class="fab fa-telegram"></i> Telegram канал</a>
+                        <a href="https://t.me/hanzzo_rr4">Telegram канал</a>
                     </div>
                 </div>
             </div>
@@ -1559,25 +1509,25 @@
             <div class="screenshot-gallery">
                 <div class="screenshot-item">
                     <div class="screenshot-preview">
-                        <i class="fas fa-chart-line"></i>
+                        📈
                     </div>
                     <p>График мониторинга пинга</p>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-preview">
-                        <i class="fas fa-list"></i>
+                        📋
                     </div>
                     <p>Детальная статистика сессий</p>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-preview">
-                        <i class="fas fa-search-plus"></i>
+                        🔍
                     </div>
                     <p>Экранная лупа с увеличением</p>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-preview">
-                        <i class="fas fa-cogs"></i>
+                        ⚙️
                     </div>
                     <p>Настройки и параметры</p>
                 </div>
@@ -1597,7 +1547,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Безопасна ли программа? Может ли она навредить аккаунту?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>▼</span>
                     </div>
                     <div class="faq-answer">
                         <p>Программа <strong>полностью безопасна</strong>. Она использует только пассивный мониторинг сетевых соединений без вмешательства в игру. Не изменяет файлы игры, не модифицирует память, не является читом или модом. Не может привести к блокировке аккаунта.</p>
@@ -1607,7 +1557,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Какие функции доступны в программе?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>▼</span>
                     </div>
                     <div class="faq-answer">
                         <p>• Измерение пинга в реальном времени<br>
@@ -1625,7 +1575,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Как установить и использовать программу?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>▼</span>
                     </div>
                     <div class="faq-answer">
                         <p>1. Скачайте архив с сайта<br>
@@ -1639,7 +1589,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Сколько стоит программа? Есть ли платная версия?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>▼</span>
                     </div>
                     <div class="faq-answer">
                         <p>Программа <strong>полностью бесплатна</strong> и всегда будет оставаться таковой. Разрабатывается энтузиастами для сообщества Русской Рыбалки 4. Все обновления также бесплатны.</p>
@@ -1649,10 +1599,10 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Как получить техническую поддержку?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Техническая поддержка доступна через Telegram канал @hanzzo_rr4. Также вы можете задавать вопросы на GitHub в разделе Issues. Среднее время ответа - 24 часа.</p>
+                        <p>Техническая поддержка доступна через Telegram канал <a href="https://t.me/hanzzo_rr4" style="color: var(--accent);">@hanzzo_rr4</a>. Среднее время ответа - 24 часа.</p>
                     </div>
                 </div>
             </div>
@@ -1667,41 +1617,35 @@
                     <div class="footer-logo">
                         <div class="logo-graphic"></div>
                         <div>
-                            <div style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.2rem; background: linear-gradient(45deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent;">HANZZO</div>
+                            <div style="font-weight: 900; font-size: 1.2rem; background: linear-gradient(45deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent;">HANZZO</div>
                             <div style="font-size: 0.8rem; color: #94a3b8;">NETWORK PORT PRO</div>
                         </div>
                     </div>
                     <p class="footer-info">
                         Профессиональный мониторинг сетевого соединения для игры Русская Рыбалка 4
                     </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Быстрые ссылки</h4>
                     <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Главная</a></li>
-                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Возможности</a></li>
-                        <li><a href="#download"><i class="fas fa-chevron-right"></i> Скачать</a></li>
-                        <li><a href="#screenshots"><i class="fas fa-chevron-right"></i> Скриншоты</a></li>
-                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#features">Возможности</a></li>
+                        <li><a href="#download">Скачать</a></li>
+                        <li><a href="#screenshots">Скриншоты</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
                     <h4>Контакты</h4>
-                    <p><i class="fas fa-envelope"></i> support@hanzzo.dev</p>
-                    <p><i class="fab fa-telegram"></i> @hanzzo_rr4</p>
-                    <p><i class="fab fa-github"></i> HANZZO-Development</p>
+                    <p>Telegram: <a href="https://t.me/hanzzo_rr4" style="color: var(--accent);">@hanzzo_rr4</a></p>
+                    <p>Поддержка: <a href="https://t.me/hanzzo_rr4" style="color: var(--accent);">Telegram канал</a></p>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2024 HANZZO DEVELOPMENT. Все права защищены. Русская Рыбалка 4 является зарегистрированной торговой маркой.
+                © 2025 HANZZO DEVELOPMENT. Все права защищены.
             </div>
         </div>
     </footer>
@@ -1765,38 +1709,6 @@
             });
         });
 
-        // Параллакс эффект для волн
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const waves = document.querySelector('.waves');
-            if (waves) {
-                waves.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
-
-        // Анимация появления элементов при скролле
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Наблюдаем за элементами для анимации
-        document.querySelectorAll('.feature-card, .screenshot-item, .faq-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-        });
-
         // Анимированный мониторинг пинга
         class NetworkMonitor {
             constructor() {
@@ -1804,8 +1716,6 @@
                 this.jitterValues = [3, 4, 5, 6, 7];
                 this.packetLossValues = [0.1, 0.2, 0.3, 0.4, 0.5];
                 this.servers = [
-                    { name: 'rf4game.ru:9777', status: 'online' },
-                    { name: 'rf4game.ru:9778', status: 'online' },
                     { name: 'rf4game.ru:9777', status: 'online' },
                     { name: 'rf4game.ru:9778', status: 'online' }
                 ];
@@ -1878,8 +1788,6 @@
                 const change = this.currentPing - oldPing;
                 pingChangeElement.textContent = `${change > 0 ? '+' : ''}${change}ms`;
                 pingChangeElement.style.color = change < 0 ? '#10b981' : change === 0 ? '#f59e0b' : '#ef4444';
-                pingChangeElement.querySelector('i').className = change < 0 ? 'fas fa-arrow-down' : 
-                                                               change === 0 ? 'fas fa-minus' : 'fas fa-arrow-up';
                 
                 // Обновляем джиттер
                 const jitter = this.jitterValues[Math.floor(Math.random() * this.jitterValues.length)];
@@ -1889,7 +1797,7 @@
                 const packetLoss = this.packetLossValues[Math.floor(Math.random() * this.packetLossValues.length)];
                 packetLossElement.textContent = packetLoss + '%';
                 
-                // Обновляем сервер (каждые 10 секунд)
+                // Обновляем сервер
                 if (Math.random() > 0.95) {
                     this.currentServerIndex = (this.currentServerIndex + 1) % this.servers.length;
                     const server = this.servers[this.currentServerIndex];
@@ -1916,17 +1824,6 @@
                     statusSub.textContent = 'Возможны незначительные задержки';
                     statusLabel.style.color = '#f59e0b';
                 }
-                
-                // Обновляем статус сервера
-                const isOnline = Math.random() > 0.1; // 90% шанс что онлайн
-                serverStatusElement.innerHTML = isOnline ? 
-                    '<i class="fas fa-check-circle"></i> Онлайн' : 
-                    '<i class="fas fa-times-circle"></i> Оффлайн';
-                serverStatusElement.style.background = isOnline ? 
-                    'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)';
-                serverStatusElement.style.borderColor = isOnline ? 
-                    'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)';
-                serverStatusElement.style.color = isOnline ? '#10b981' : '#ef4444';
                 
                 // Обновляем график
                 this.updateGraph();
@@ -1956,7 +1853,7 @@
             const monitor = new NetworkMonitor();
             
             // Анимация для иконок в возможностях
-            document.querySelectorAll('.feature-icon i').forEach((icon, index) => {
+            document.querySelectorAll('.feature-icon').forEach((icon, index) => {
                 icon.style.animationDelay = `${index * 0.2}s`;
                 icon.style.animation = 'float 3s ease-in-out infinite';
             });
@@ -1999,5 +1896,4 @@
         });
     </script>
 </body>
-
 </html>
