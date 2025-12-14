@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANZZO | Ремонт катушки Reef Electro Raptor 40</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Шапка сайта */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-graphic {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .logo-graphic::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background: var(--darker);
+            border-radius: 6px;
+        }
+
+        .logo-graphic::after {
+            content: '';
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            background: var(--light);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--light);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 2px;
+        }
+
+        .logo-game {
+            font-size: 0.7rem;
+            color: var(--warning);
+            font-weight: 500;
+            margin-top: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-link i {
+            font-size: 0.9rem;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--light);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Главная секция ремонта */
+        .repair-hero {
+            min-height: 100vh;
+            padding: 140px 0 60px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .repair-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .repair-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reel-image-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .reel-image {
+            width: 450px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+                        0 0 0 1px rgba(59, 130, 246, 0.4),
+                        0 0 60px rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1a2538, #0d1425);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            background: transparent;
+        }
+
+        .reel-title {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .reel-title h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .reel-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .repair-info {
+            padding: 2rem;
+        }
+
+        .repair-info h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .status-indicators {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .status-item {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-item:hover {
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.8);
+            transform: translateX(5px);
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .status-name {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .status-name i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .status-percentage {
+            font-size: 1.4rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .status-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Волны фона */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            border-radius: 40%;
+            animation: waveMove 20s infinite linear;
+        }
+
+        .wave1 {
+            opacity: 0.7;
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        .wave2 {
+            opacity: 0.5;
+            animation-duration: 20s;
+        }
+
+        .wave3 {
+            opacity: 0.3;
+            animation-duration: 15s;
+            animation-direction: reverse;
+        }
+
+        @keyframes waveMove {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Футер */
+        .footer {
+            background: rgba(2, 6, 23, 0.8);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 3rem 0 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .logo-graphic {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-info {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: var(--light);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact p {
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .repair-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .reel-image {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .status-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(2, 6, 23, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .repair-hero {
+                padding: 120px 0 40px;
+            }
+            
+            .reel-image {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .reel-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .repair-info h2 {
+                font-size: 1.5rem;
+            }
+            
+            .status-name {
+                font-size: 1.1rem;
+            }
+            
+            .status-percentage {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-graphic"></div>
+                    <div class="logo-text">
+                        <div class="logo-main">HANZZO</div>
+                        <div class="logo-subtitle">NETWORK PORT PRO</div>
+                        <div class="logo-game">для Русской Рыбалки 4</div>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#repair" class="nav-link active"><i class="fas fa-tools"></i> Ремонт катушек</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главная секция ремонта -->
+    <section id="repair" class="repair-hero">
+        <div class="container">
+            <div class="repair-content">
+                <div class="reel-image-container">
+                    <div class="reel-image">
+                        <!-- Картинка катушки с твоего хоста -->
+                        <img src="https://hanzzo.do.am/2025-12-14_20-28-50-no-bg-preview-carve.photos-.png" alt="Reef Electro Raptor 40">
+                    </div>
+                    <div class="reel-title">
+                        <h1>Reef Electro Raptor 40</h1>
+                        <p>Электронная катушка для морской рыбалки</p>
+                    </div>
+                </div>
+                
+                <div class="repair-info">
+                    <h2>Диагностика состояния катушки</h2>
+                    
+                    <div class="status-indicators">
+                        <div class="status-item">
+                            <div class="status-header">
+                                <div class="status-name">
+                                    <i class="fas fa-cogs"></i>
+                                    Механизм
+                                </div>
+                                <div class="status-percentage" style="color: #f59e0b;">65%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                            </div>
+                            <div class="status-description">
+                                Требуется чистка механизма от загрязнений и проверка шестеренок. Изнашивание среднее.
+                            </div>
+                        </div>
+                        
+                        <div class="status-item">
+                            <div class="status-header">
+                                <div class="status-name">
+                                    <i class="fas fa-bolt"></i>
+                                    Двигатель
+                                </div>
+                                <div class="status-percentage" style="color: #f59e0b;">65%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                            </div>
+                            <div class="status-description">
+                                Электродвигатель работает, но требует профилактики. Возможны потери мощности.
+                            </div>
+                        </div>
+                        
+                        <div class="status-item">
+                            <div class="status-header">
+                                <div class="status-name">
+                                    <i class="fas fa-circle"></i>
+                                    Подшипники
+                                </div>
+                                <div class="status-percentage" style="color: #10b981;">40%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                            </div>
+                            <div class="status-description">
+                                Состояние подшипников удовлетворительное. Требуется смазка и проверка на люфт.
+                            </div>
+                        </div>
+                        
+                        <div class="status-item">
+                            <div class="status-header">
+                                <div class="status-name">
+                                    <i class="fas fa-oil-can"></i>
+                                    Смазка
+                                </div>
+                                <div class="status-percentage" style="color: #10b981;">35%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                            </div>
+                            <div class="status-description">
+                                Смазка практически израсходована. Требуется полная переборка и смазка всех узлов.
+                            </div>
+                        </div>
+                        
+                        <div class="status-item">
+                            <div class="status-header">
+                                <div class="status-name">
+                                    <i class="fas fa-circle-notch"></i>
+                                    Шпуля
+                                </div>
+                                <div class="status-percentage" style="color: #ef4444;">75%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+                            </div>
+                            <div class="status-description">
+                                Сильный износ шпули. Возможны проблемы с укладкой лески. Рекомендуется замена.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-graphic"></div>
+                        <div>
+                            <div style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.2rem; background: linear-gradient(45deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent;">HANZZO</div>
+                            <div style="font-size: 0.8rem; color: #94a3b8;">NETWORK PORT PRO</div>
+                        </div>
+                    </div>
+                    <p class="footer-info">
+                        Профессиональный мониторинг сетевого соединения для игры Русская Рыбалка 4
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li><a href="#repair"><i class="fas fa-chevron-right"></i> Ремонт катушек</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-envelope"></i> support@hanzzo.dev</p>
+                    <p><i class="fab fa-telegram"></i> @hanzzo_rr4</p>
+                    <p><i class="fab fa-github"></i> HANZZO-Development</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 HANZZO DEVELOPMENT. Все права защищены. Русская Рыбалка 4 является зарегистрированной торговой маркой.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Обновление активной ссылки в меню
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Параллакс эффект для волн
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const waves = document.querySelector('.waves');
+            if (waves) {
+                waves.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Анимация прогресс-баров
+        document.addEventListener('DOMContentLoaded', () => {
+            // Запускаем анимацию прогресс-баров с задержкой
+            setTimeout(() => {
+                const progressFills = document.querySelectorAll('.progress-fill');
+                progressFills.forEach((fill, index) => {
+                    // Сбрасываем ширину для анимации
+                    const width = fill.style.width;
+                    fill.style.width = '0%';
+                    
+                    setTimeout(() => {
+                        fill.style.width = width;
+                    }, index * 300);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
