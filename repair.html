@@ -1,13 +1,15 @@
+[file name]: 1.html
+[file content begin]
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HANZZO | Ремонт катушки Reef Electro Raptor 40</title>
+    <title>HANZZO | Ремонт катушек Reef Electro Raptor 40, Beluga Taiga LTD C 40 2S, Reef Borealica 40 DS и Triumph 30 2S</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-OSesxedwHv87zRwLxEX-UipP_8XjVf4bJtK2VWVSB3ETAdRX9nsekDRmIDXlY5lYSZ6W5tu65XyeEiavZAE3w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9yZjQtcG9ydHMubmV0bGlmeS5hcHAvcmVwYWly"/><style>
         * {
             margin: 0;
             padding: 0;
@@ -191,10 +193,82 @@
             transition: 0.3s;
         }
 
+        /* Кнопки быстрого перехода к катушкам */
+        .reel-navigation {
+            position: relative;
+            padding: 2rem 0;
+            background: rgba(2, 6, 23, 0.9);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            margin-top: 80px; /* Отступ от фиксированного меню */
+            z-index: 10;
+        }
+
+        .reel-nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .reel-nav-btn {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 180px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .reel-nav-btn:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .reel-nav-btn.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(6, 182, 212, 0.25));
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .reel-nav-btn i {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent);
+        }
+
+        .reel-nav-btn .reel-name {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .reel-nav-btn .reel-desc {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
         /* Главная секция ремонта */
         .repair-hero {
             min-height: 100vh;
-            padding: 140px 0 60px;
+            padding: 60px 0 60px;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -377,6 +451,31 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Секции для второй, третьей и четвёртой катушек */
+        .second-reel-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .third-reel-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .fourth-reel-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .second-reel-section .repair-content,
+        .third-reel-section .repair-content,
+        .fourth-reel-section .repair-content {
+            margin-top: 2rem;
+        }
+
         /* Волны фона */
         .waves {
             position: absolute;
@@ -430,7 +529,6 @@
             background: rgba(2, 6, 23, 0.8);
             border-top: 1px solid rgba(59, 130, 246, 0.2);
             padding: 3rem 0 2rem;
-            margin-top: 5rem;
         }
 
         .footer-content {
@@ -544,6 +642,16 @@
                 transform: translateY(-5px);
             }
             
+            .reel-nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .reel-nav-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
             .nav-menu {
                 display: none;
                 position: fixed;
@@ -574,7 +682,7 @@
             }
             
             .repair-hero {
-                padding: 120px 0 40px;
+                padding: 40px 0 40px;
             }
             
             .reel-image {
@@ -597,6 +705,30 @@
             .status-percentage {
                 font-size: 1.2rem;
             }
+            
+            .reel-navigation {
+                padding: 1.5rem 0;
+                margin-top: 70px;
+            }
+            
+            .reel-nav-btn {
+                padding: 0.8rem 1.2rem;
+                min-width: 160px;
+                font-size: 0.85rem;
+            }
+            
+            .reel-nav-btn i {
+                font-size: 1.1rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .reel-nav-btn .reel-name {
+                font-size: 0.9rem;
+            }
+            
+            .reel-nav-btn .reel-desc {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -605,7 +737,7 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
+                <a class='logo' href='/'>
                     <div class="logo-graphic"></div>
                     <div class="logo-text">
                         <div class="logo-main">HANZZO</div>
@@ -615,12 +747,12 @@
                 </a>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link active">Главная</a></li>
-                    <li><a href="index.html" class="nav-link">Возможности</a></li>
-                    <li><a href="index.html" class="nav-link">Скачать</a></li>
-                    <li><a href="index.html" class="nav-link">Скриншоты</a></li>
-                    <li><a href="index.html" class="nav-link">FAQ</a></li>
-                    <li><a href="repair.html" class="nav-link"><i class="fas fa-tools"></i> Ремонт катушек</a></li>
+                    <li><a class='nav-link active' href='/'>Главная</a></li>
+                    <li><a class='nav-link' href='/'>Возможности</a></li>
+                    <li><a class='nav-link' href='/'>Скачать</a></li>
+                    <li><a class='nav-link' href='/'>Скриншоты</a></li>
+                    <li><a class='nav-link' href='/'>FAQ</a></li>
+                    <li><a class='nav-link' href='/repair'><i class="fas fa-tools"></i> Ремонт катушек</a></li>
                 </ul>
                 
                 <div class="hamburger" id="hamburger">
@@ -632,9 +764,39 @@
         </div>
     </header>
 
+    <!-- Навигация по катушкам -->
+    <div class="reel-navigation">
+        <div class="reel-nav-container">
+            <a href="#repair" class="reel-nav-btn active" data-reel="repair">
+                <i class="fas fa-fish"></i>
+                <div class="reel-name">Reef Electro Raptor 40</div>
+                <div class="reel-desc">Электронная морская</div>
+            </a>
+            
+            <a href="#reel2" class="reel-nav-btn" data-reel="reel2">
+                <i class="fas fa-weight-hanging"></i>
+                <div class="reel-name">Beluga Taiga LTD C 40 2S</div>
+                <div class="reel-desc">Трофейная мощная</div>
+            </a>
+            
+            <a href="#reel3" class="reel-nav-btn" data-reel="reel3">
+                <i class="fas fa-water"></i>
+                <div class="reel-name">Reef Borealica 40 DS</div>
+                <div class="reel-desc">Универсальная морская</div>
+            </a>
+            
+            <a href="#reel4" class="reel-nav-btn" data-reel="reel4">
+                <i class="fas fa-mountain"></i>
+                <div class="reel-name">Triumph 30 2S</div>
+                <div class="reel-desc">Компактная пресноводная</div>
+            </a>
+        </div>
+    </div>
+
     <!-- Главная секция ремонта -->
     <section id="repair" class="repair-hero">
         <div class="container">
+            <!-- Первая катушка: Reef Electro Raptor 40 -->
             <div class="repair-content">
                 <div class="reel-image-container">
                     <div class="reel-image">
@@ -733,6 +895,264 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Вторая катушка: Beluga Taiga LTD C 40 2S -->
+            <div id="reel2" class="second-reel-section">
+                <div class="repair-content">
+                    <div class="reel-image-container">
+                        <div class="reel-image">
+                            <!-- Картинка второй катушки -->
+                            <img src="https://hanzzo.do.am/2025-12-15_00-38-53-no-bg-preview-carve.photos-.png" alt="Beluga Taiga LTD C 40 2S">
+                        </div>
+                        <div class="reel-title">
+                            <h1>Beluga Taiga LTD C 40 2S</h1>
+                            <p>Мощная катушка для трофейной рыбалки</p>
+                        </div>
+                    </div>
+                    
+                    <div class="repair-info">
+                        <h2>Диагностика состояния катушки</h2>
+                        
+                        <div class="status-indicators">
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-cogs"></i>
+                                        Механизм
+                                    </div>
+                                    <div class="status-percentage" style="color: #f59e0b;">60%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Механизм требует чистки и регулировки. Изнашивание выше среднего.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle"></i>
+                                        Подшипники
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">35%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Подшипники изношены, требуется замена. Наблюдается небольшой люфт.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-oil-can"></i>
+                                        Смазка
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">35%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Смазка практически отсутствует. Необходима полная переборка и смазка всех узлов.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle-notch"></i>
+                                        Шпуля
+                                    </div>
+                                    <div class="status-percentage" style="color: #ef4444;">70%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Значительный износ шпули. Требуется замена для предотвращения повреждения лески.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Третья катушка: Reef Borealica 40 DS -->
+            <div id="reel3" class="third-reel-section">
+                <div class="repair-content">
+                    <div class="reel-image-container">
+                        <div class="reel-image">
+                            <!-- Картинка третьей катушки -->
+                            <img src="https://hanzzo.do.am/2025-12-15_01-56-05-no-bg-preview-carve.photos-.png" alt="Reef Borealica 40 DS">
+                        </div>
+                        <div class="reel-title">
+                            <h1>Reef Borealica 40 DS</h1>
+                            <p>Универсальная катушка для морской рыбалки</p>
+                        </div>
+                    </div>
+                    
+                    <div class="repair-info">
+                        <h2>Диагностика состояния катушки</h2>
+                        
+                        <div class="status-indicators">
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-cogs"></i>
+                                        Механизм
+                                    </div>
+                                    <div class="status-percentage" style="color: #f59e0b;">60%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Требуется чистка и регулировка механизма. Средний уровень износа.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle"></i>
+                                        Подшипники
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">40%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Состояние подшипников удовлетворительное, требуется профилактическая смазка.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-oil-can"></i>
+                                        Смазка
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">35%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Смазка практически отсутствует. Необходима полная переборка и смазка всех узлов.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle-notch"></i>
+                                        Шпуля
+                                    </div>
+                                    <div class="status-percentage" style="color: #ef4444;">70%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Значительный износ шпули. Рекомендуется замена для оптимальной работы катушки.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Четвёртая катушка: Triumph 30 2S -->
+            <div id="reel4" class="fourth-reel-section">
+                <div class="repair-content">
+                    <div class="reel-image-container">
+                        <div class="reel-image">
+                            <!-- Картинка четвёртой катушки -->
+                            <img src="https://hanzzo.do.am/2025-12-15_01-57-01-no-bg-preview-carve.photos-.png" alt="Triumph 30 2S">
+                        </div>
+                        <div class="reel-title">
+                            <h1>Triumph 30 2S</h1>
+                            <p>Компактная катушка для пресноводной рыбалки</p>
+                        </div>
+                    </div>
+                    
+                    <div class="repair-info">
+                        <h2>Диагностика состояния катушки</h2>
+                        
+                        <div class="status-indicators">
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-cogs"></i>
+                                        Механизм
+                                    </div>
+                                    <div class="status-percentage" style="color: #f59e0b;">55%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 55%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Механизм требует чистки и профилактического обслуживания. Средний уровень износа.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle"></i>
+                                        Подшипники
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">35%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Подшипники изношены, требуется профилактика и возможная замена.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-oil-can"></i>
+                                        Смазка
+                                    </div>
+                                    <div class="status-percentage" style="color: #10b981;">40%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Смазка практически отсутствует. Требуется полная переборка и смазка всех узлов.
+                                </div>
+                            </div>
+                            
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <div class="status-name">
+                                        <i class="fas fa-circle-notch"></i>
+                                        Шпуля
+                                    </div>
+                                    <div class="status-percentage" style="color: #ef4444;">65%</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+                                </div>
+                                <div class="status-description">
+                                    Значительный износ шпули. Рекомендуется замена для оптимальной работы катушки.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="waves">
@@ -801,23 +1221,27 @@
             });
         });
 
-        // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        // Плавная прокрутка для навигации по катушкам
+        document.querySelectorAll('.reel-nav-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                
+                if (targetElement) {
+                    // Рассчитываем позицию с учетом фиксированного меню и кнопок навигации
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const reelNavHeight = document.querySelector('.reel-navigation').offsetHeight;
+                    const totalOffset = headerHeight + reelNavHeight + 20; // 20px дополнительный отступ
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - totalOffset,
                         behavior: 'smooth'
                     });
                     
-                    // Обновление активной ссылки в меню
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
+                    // Обновление активной кнопки
+                    document.querySelectorAll('.reel-nav-btn').forEach(btn => {
+                        btn.classList.remove('active');
                     });
                     this.classList.add('active');
                 }
@@ -848,13 +1272,51 @@
                     }, index * 300);
                 });
             }, 500);
+            
+            // Подсветка активной кнопки катушки при скроллинге
+            const reelButtons = document.querySelectorAll('.reel-nav-btn');
+            const reelSections = [
+                document.querySelector('#repair'),
+                document.querySelector('#reel2'),
+                document.querySelector('#reel3'),
+                document.querySelector('#reel4')
+            ];
+            
+            const highlightActiveReel = () => {
+                let currentSection = null;
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const reelNavHeight = document.querySelector('.reel-navigation').offsetHeight;
+                const scrollPosition = window.scrollY + headerHeight + reelNavHeight + 50;
+                
+                reelSections.forEach(section => {
+                    if (section && scrollPosition >= section.offsetTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                if (currentSection) {
+                    reelButtons.forEach(button => {
+                        const reelId = button.getAttribute('data-reel');
+                        button.classList.toggle('active', reelId === currentSection);
+                    });
+                }
+            };
+            
+            window.addEventListener('scroll', highlightActiveReel);
+            highlightActiveReel(); // Инициализация при загрузке
+            
+            // Обработка хеша в URL при загрузке страницы
+            const hash = window.location.hash;
+            if (hash) {
+                const targetButton = document.querySelector(`.reel-nav-btn[href="${hash}"]`);
+                if (targetButton) {
+                    setTimeout(() => {
+                        targetButton.click();
+                    }, 100);
+                }
+            }
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
+[file content end]
