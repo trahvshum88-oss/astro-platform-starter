@@ -7,7 +7,7 @@
     <title>HANZZO | Ремонт катушек Reef Electro Raptor 40, Beluga Taiga LTD C 40 2S, Reef Borealica 40 DS и Triumph 30 2S</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-OSesxedwHv87zRwLxEX-UipP_8XjVf4bJtK2VWVSB3ETAdRX9nsekDRmIDXlY5lYSZ6W5tu65XyeEiavZAE3w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9yZjQtcG9ydHMubmV0bGlmeS5hcHAvcmVwYWly"/><style>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Z87KDR7WoysRa7S0zCFPA2HABxJ_wm68PgdpQc4nOcMPuTLbJlOMpuyPB0EAjM7LFQY2JjbQS-9SXzctU8v6YA" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9yZjQtcG9ydHMubmV0bGlmeS5hcHAvcmVwYWly"/><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-OSesxedwHv87zRwLxEX-UipP_8XjVf4bJtK2VWVSB3ETAdRX9nsekDRmIDXlY5lYSZ6W5tu65XyeEiavZAE3w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9yZjQtcG9ydHMubmV0bGlmeS5hcHAvcmVwYWly"/><style>
         * {
             margin: 0;
             padding: 0;
@@ -449,6 +449,64 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Блок рекомендуемой смазки */
+        .lube-recommendation {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lube-icon {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .lube-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .lube-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .lube-highlight {
+            color: var(--accent);
+            font-weight: 600;
+            background: rgba(6, 182, 212, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
         /* Секции для второй, третьей и четвёртой катушек */
         .second-reel-section {
             margin-top: 6rem;
@@ -650,6 +708,12 @@
                 max-width: 300px;
             }
             
+            .lube-recommendation {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
             .nav-menu {
                 display: none;
                 position: fixed;
@@ -702,6 +766,10 @@
             
             .status-percentage {
                 font-size: 1.2rem;
+            }
+            
+            .lube-info h3 {
+                font-size: 1.1rem;
             }
             
             .reel-navigation {
@@ -891,6 +959,20 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Рекомендуемая смазка для первой катушки -->
+                    <div class="lube-recommendation">
+                        <div class="lube-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                        <div class="lube-info">
+                            <h3>Рекомендуемая смазка</h3>
+                            <p>Для данной катушки рекомендуется использовать специальную смазку для электронных морских катушек, которая обеспечивает защиту от коррозии и стабильную работу в соленой воде.</p>
+                            <div class="lube-highlight">
+                                <i class="fas fa-star"></i> STAB Bearings Extra solid oil
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -973,6 +1055,20 @@
                                 </div>
                                 <div class="status-description">
                                     Значительный износ шпули. Требуется замена для предотвращения повреждения лески.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Рекомендуемая смазка для второй катушки -->
+                        <div class="lube-recommendation">
+                            <div class="lube-icon">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <div class="lube-info">
+                                <h3>Рекомендуемая смазка</h3>
+                                <p>Для мощных трофейных катушек необходима высококачественная смазка, способная выдерживать экстремальные нагрузки и обеспечивать плавную работу механизма.</p>
+                                <div class="lube-highlight">
+                                    <i class="fas fa-star"></i> STAB Bearings Extra solid oil
                                 </div>
                             </div>
                         </div>
@@ -1062,6 +1158,20 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Рекомендуемая смазка для третьей катушки -->
+                        <div class="lube-recommendation">
+                            <div class="lube-icon">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <div class="lube-info">
+                                <h3>Рекомендуемая смазка</h3>
+                                <p>Универсальные морские катушки требуют смазки, устойчивой к соленой воде и перепадам температур, обеспечивающей надежную работу в различных условиях.</p>
+                                <div class="lube-highlight">
+                                    <i class="fas fa-star"></i> STAB Bearings Extra solid oil
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1145,6 +1255,20 @@
                                 </div>
                                 <div class="status-description">
                                     Значительный износ шпули. Рекомендуется замена для оптимальной работы катушки.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Рекомендуемая смазка для четвертой катушки -->
+                        <div class="lube-recommendation">
+                            <div class="lube-icon">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <div class="lube-info">
+                                <h3>Рекомендуемая смазка</h3>
+                                <p>Компактные пресноводные катушки нуждаются в качественной смазке, обеспечивающей плавность хода и долговечность механизма при интенсивном использовании.</p>
+                                <div class="lube-highlight">
+                                    <i class="fas fa-star"></i> STAB Bearings Extra solid oil
                                 </div>
                             </div>
                         </div>
@@ -1271,6 +1395,21 @@
                 });
             }, 500);
             
+            // Анимация появления блока с рекомендацией смазки
+            setTimeout(() => {
+                const lubeBlocks = document.querySelectorAll('.lube-recommendation');
+                lubeBlocks.forEach((block, index) => {
+                    block.style.opacity = '0';
+                    block.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        block.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                        block.style.opacity = '1';
+                        block.style.transform = 'translateY(0)';
+                    }, 1000 + (index * 300));
+                });
+            }, 1000);
+            
             // Подсветка активной кнопки катушки при скроллинге
             const reelButtons = document.querySelectorAll('.reel-nav-btn');
             const reelSections = [
@@ -1317,4 +1456,3 @@
     </script>
 </body>
 </html>
-
